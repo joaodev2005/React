@@ -7,7 +7,10 @@ import ShowUserName from './components/ShowUserName'
 import CarDetails from './components/CarDetails'
 import Fragments from './components/Fragments'
 import Container from './components/Container'
-import { Children } from 'react'
+import ExecuteFunction from './components/ExecuteFunction'
+import { useState } from 'react'
+import Message from './components/Message'
+import ChangeMessage from './components/ChangeMessage'
 
 const cars = [
   { id: 1, brand: 'Ferrari', color: 'Amarelo', km: 0 },
@@ -16,7 +19,15 @@ const cars = [
 ]
 
 function App() {
+  function showMessage() {
+    console.log('deu')
+  }
 
+  const [message, setMessage] = useState('')
+
+  const handleMessage = (msg) => {
+    setMessage(msg)
+  }
 
   return (
     <>
@@ -44,6 +55,9 @@ function App() {
             <p>teste</p>
           </div>
         </Container>
+        <ExecuteFunction myFunction={showMessage} />
+        <Message msg={message} />
+        <ChangeMessage handleMessage={handleMessage}/>
       </div>
     </>
   )
