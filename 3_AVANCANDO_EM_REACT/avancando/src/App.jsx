@@ -6,6 +6,8 @@ import CondicionalRender from './components/CondicionalRender'
 import ShowUserName from './components/ShowUserName'
 import CarDetails from './components/CarDetails'
 import Fragments from './components/Fragments'
+import Container from './components/Container'
+import { Children } from 'react'
 
 const cars = [
   { id: 1, brand: 'Ferrari', color: 'Amarelo', km: 0 },
@@ -33,6 +35,15 @@ function App() {
           <CarDetails key={car.id} brand={car.brand} km={car.km} color={car.color} />
         ))}
         <Fragments />
+        <Container >
+          <p>Alguma coisa</p>
+        </Container>
+        <Container>
+          <div>
+            <h2>Meu componente</h2>
+            <p>teste</p>
+          </div>
+        </Container>
       </div>
     </>
   )
