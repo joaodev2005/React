@@ -2,7 +2,7 @@
 const CondicionalRender = () => {
     const x = 5
 
-    const name = 'Douglas'
+    const name = 'Isaque'
 
     return (
         <div>
@@ -15,7 +15,7 @@ const CondicionalRender = () => {
                 </div>
             ) : (
                 <div>
-                    <p>Nome não encontrado!</p>
+                    <p>Nome não encontrado</p>
                 </div>
             )}
         </div>
