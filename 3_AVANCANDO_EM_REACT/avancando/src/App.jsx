@@ -2,6 +2,7 @@ import './App.css'
 import night from './assets/night.jpg'
 import Data from './components/Data'
 import ListRender from './components/ListRender'
+import CondicionalRender from './components/CondicionalRender'
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
         <img src={night} alt="" />
         <Data/>
         <ListRender/>
+        <CondicionalRender/>
       </div>
     </>
   )
