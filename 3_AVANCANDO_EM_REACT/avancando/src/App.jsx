@@ -5,6 +5,7 @@ import ListRender from './components/ListRender'
 import CondicionalRender from './components/CondicionalRender'
 import ShowUserName from './components/ShowUserName'
 import CarDetails from './components/CarDetails'
+import Fragments from './components/Fragments'
 
 const cars = [
   { id: 1, brand: 'Ferrari', color: 'Amarelo', km: 0 },
@@ -31,6 +32,7 @@ function App() {
         {cars.map((car) => (
           <CarDetails key={car.id} brand={car.brand} km={car.km} color={car.color} />
         ))}
+        <Fragments />
       </div>
     </>
   )
