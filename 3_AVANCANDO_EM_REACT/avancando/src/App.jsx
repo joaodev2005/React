@@ -4,6 +4,7 @@ import Data from './components/Data'
 import ListRender from './components/ListRender'
 import CondicionalRender from './components/CondicionalRender'
 import ShowUserName from './components/ShowUserName'
+import CarDetails from './components/CarDetails'
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
         <ListRender/>
         <CondicionalRender/>
         <ShowUserName name='Jailson'/>
+        <CarDetails brand='VW' km={999} color='Dourado'/>
       </div>
     </>
   )
