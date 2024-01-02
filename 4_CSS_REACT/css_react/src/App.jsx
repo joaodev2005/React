@@ -3,6 +3,7 @@ import MyComponent from './components/MyComponent'
 
 function App() {
   const n = 21
+  const redTitle = true
 
   return (
     <>
@@ -17,6 +18,7 @@ function App() {
         <h2 style={n > 20 ? {color: 'cyan'} : {color: 'yellow'}}>
           CSS dinâmico
         </h2>
+        <h2 className={redTitle ? 'red-title' : 'title'}>Este titulo vai ter uma classe</h2>
       </div>
     </>
   )
