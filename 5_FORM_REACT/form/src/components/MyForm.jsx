@@ -10,10 +10,15 @@ const MyForm = () => {
         setName(e.target.value)
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        console.log(name, email)
+    }
+
     console.log(name, email)
 
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
             <div>
                 <label htmlFor="name">Nome:</label>
                 <input
@@ -25,7 +30,7 @@ const MyForm = () => {
             </div>
             <label>
                 <span>E-mail:</span>
-                <input
+                <input 
                     type="email"
                     name="email"
                     id="email"
