@@ -8,6 +8,8 @@ const MyForm = ({ userName, userEmail }) => {
 
     const [bio, setBio] = useState('')
 
+    const [role, setRole] = useState('')
+
     const handleName = (e) => {
         setName(e.target.value)
     }
@@ -15,14 +17,15 @@ const MyForm = ({ userName, userEmail }) => {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        console.log(name, email, bio)
+        console.log(name, email, bio, role)
 
         setName('')
         setEmail('')
         setBio('')
+        setRole(``)
     }
 
-    console.log(name, email, bio)
+    console.log(name, email, bio, role)
 
     return (
         <form onSubmit={handleSubmit}>
@@ -58,6 +61,19 @@ const MyForm = ({ userName, userEmail }) => {
                     onChange={(e) => setBio(e.target.value)}
                     value={bio}
                 ></textarea>
+            </label>
+            <label>
+                <span>Função no sistema</span>
+                <select
+                    name="role"
+                    id="sistem"
+                    onChange={(e) => setRole(e.target.value)}
+                    value={role}
+                >
+                    <option value="user">Usuário</option>
+                    <option value="editor">Editor</option>
+                    <option value="admin">Adiministrador</option>
+                </select>
             </label>
             <input type="submit" value="Enviar" />
         </form>
