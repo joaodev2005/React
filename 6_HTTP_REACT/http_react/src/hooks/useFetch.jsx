@@ -1,23 +1,143 @@
+// import { useState, useEffect } from "react";
+
+// export const useFetch = (url) => {
+
+//     const [data, setData] = useState(null)
+
+//     const [config, setConfig] = useState(null)
+//     const [method, setMethod] = useState(null)
+//     const [callFetch, setCallFetch] = useState(null)
+
+//     useEffect(() => {
+
+//         const httpConfig = (data, method) => {
+//             if(method === 'POST') {
+//                 setConfig({
+//                     method,
+//                     Headers: {
+//                         "Content-type": "application/json"
+//                     },
+//                     body: JSON.stringify(data)
+//                 })
+
+//                 setMethod(method)
+//             }
+//         }
+
+//         const fetchData = async () => {
+
+//             const res = await fetch(url)
+//             const json = await res.json()
+
+//             setData(json)
+
+//         }
+
+//         fetchData()
+
+//     }, [url, callFetch])
+
+//     useEffect(() => {
+
+//         const httpRequest = async() => {
+//             let json
+
+//             if(method === "POST") {
+//                 let fetchOptions = [url, config]
+
+//                 const res = await fetch(...fetchOptions)
+
+//                 json = await res.json()
+//             }
+
+//             setCallFetch(json)
+//         }
+
+//         httpRequest()
+
+//     }, [config, method, url])
+
+//     return { data, httpConfig }
+// }
+
 import { useState, useEffect } from "react";
 
+// 4 - custom hook
 export const useFetch = (url) => {
+  const [data, setData] = useState(null);
 
-    const [data, setData] = useState(null)
+  // 5 - refatorando post
+  const [config, setConfig] = useState(null);
+  const [method, setMethod] = useState(null);
+  const [callFetch, setCallFetch] = useState(false);
 
-    useEffect(() => {
+  // 6 - loading
+  const [loading, setLoading] = useState(false);
 
-        const fetchData = async () => {
+  // 7 - tratando erros
+  const [error, setError] = useState(null);
 
-            const res = await fetch(url)
-            const json = await res.json()
+  const httpConfig = (data, method) => {
+    if (method === "POST") {
+      setConfig({
+        method,
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
 
-            setData(json)
+      setMethod(method);
+    }
+  };
 
-        }
+  useEffect(() => {
+    // 6 - loading
+    setLoading(true);
 
-        fetchData()
+    const fetchData = async () => {
+      // 7 - tratando erros
+      try {
+        const res = await fetch(url);
 
-    }, [url])
+        const json = await res.json();
 
-    return { data }
-}
+        setData(json);
+      } catch (error) {
+        console.log(error.message);
+
+        setError("Houve algum erro ao carregar os dados!");
+      }
+
+      // 6 - loading
+      setLoading(false);
+    };
+
+    fetchData();
+  }, [url, callFetch]);
+
+  // 5 - refatorando post
+  useEffect(() => {
+    const httpRequest = async () => {
+      let json;
+
+      if (method === "POST") {
+
+        setLoading(true)
+        let fetchOptions = [url, config];
+
+        const res = await fetch(...fetchOptions);
+
+        json = await res.json();
+
+        setLoading(false)
+      }
+
+      setCallFetch(json);
+    };
+
+    httpRequest();
+  }, [config, method, url]);
+
+  return { data, httpConfig, loading, error };
+};

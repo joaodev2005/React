@@ -14,9 +14,9 @@ import './App.css'
 // ]
 
 function App() {
-  const [procucts, setProducts] = useState([])
+  const [products, setProducts] = useState([])
 
-  const { data: items } = useFetch(url)
+  const { data: items, httpConfig, loading } = useFetch(url)
 
   // useEffect(() => {
   //   async function getData() {
@@ -42,22 +42,24 @@ function App() {
       price
     }
 
-    const res = await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(product),
-    })
+    httpConfig(product, "POST")
 
-    const addedProduct = await res.json()
+    // const res = await fetch(url, {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json"
+    //   },
+    //   body: JSON.stringify(product),
+    // })
 
-    setProducts((prevProducts) => [...prevProducts, addedProduct])
+    // const addedProduct = await res.json()
 
-    if (res.ok) {
-      setName('');
-      setPrice('');
-    }
+    // setProducts((prevProducts) => [...prevProducts, addedProduct])
+
+    // if (res.ok) {
+    //   setName('');
+    //   setPrice('');
+    // }
   }
 
 
@@ -65,6 +67,7 @@ function App() {
     <>
       <div className="App">
         <h1>HTTP em React</h1>
+        {loading && <p>Carregando...</p> }
         <ul>
           {items &&
             items.map((product) => (
