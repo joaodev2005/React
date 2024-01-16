@@ -5,12 +5,11 @@ const url = "http://localhost:3000/products"
 import './App.css'
 
 const items = [
-  {name: 'God Of War 2018', price: '340', id: 4},
-  {name: 'Dredge', price: '440', id: 7},
-  {name: 'Until Dawn', price: '40', id: 1},
-  {name: 'Days Gone', price: '30', id: 3},
+  { name: 'God Of War 2018', price: '340', id: 4 },
+  { name: 'Dredge', price: '440', id: 7 },
+  { name: 'Until Dawn', price: '40', id: 1 },
+  { name: 'Days Gone', price: '30', id: 3 },
 ]
-
 
 function App() {
   const [procucts, setProducts] = useState([])
@@ -24,9 +23,35 @@ function App() {
       setProducts(data)
     }
 
-    getData( )
+    getData()
 
   }, [])
+
+  const [name, setName] = useState('')
+  const [price, setPrice] = useState('')
+
+  const handlesubmit = async (e) => {
+    e.preventDefault()
+
+    const product = {
+      name,
+      price
+    }
+
+    const res = await fetch(url, {
+      method: "POST", 
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(product),
+    })
+
+    if (res.ok) {
+      setName('');
+      setPrice('');
+    }
+  }
+
 
   return (
     <>
@@ -42,6 +67,23 @@ function App() {
             <li key={game.id}> {game.name} Valor: R${game.price} </li>
           ))}
         </ul>
+        <div className="add-product">
+          <form onSubmit={handlesubmit}>
+            <label>
+              <span>Nome:</span>
+              <input type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)} />
+            </label>
+            <label>
+              <span>Preço:</span>
+              <input type="text"
+                value={price}
+                onChange={(e) => setPrice(e.target.value)} />
+            </label>
+            <input type="submit" value="Enviar" />
+          </form>
+        </div>
       </div>
     </>
   )
