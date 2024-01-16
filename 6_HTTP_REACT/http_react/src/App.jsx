@@ -1,31 +1,35 @@
 import { useState, useEffect } from 'react'
 
+import { useFetch } from './hooks/useFetch'
+
 const url = "http://localhost:3000/products"
 
 import './App.css'
 
-const items = [
-  { name: 'God Of War 2018', price: '340', id: 4 },
-  { name: 'Dredge', price: '440', id: 7 },
-  { name: 'Until Dawn', price: '40', id: 1 },
-  { name: 'Days Gone', price: '30', id: 3 },
-]
+// const items = [
+//   { name: 'God Of War 2018', price: '340', id: 4 },
+//   { name: 'Dredge', price: '440', id: 7 },
+//   { name: 'Until Dawn', price: '40', id: 1 },
+//   { name: 'Days Gone', price: '30', id: 3 },
+// ]
 
 function App() {
   const [procucts, setProducts] = useState([])
 
-  useEffect(() => {
-    async function getData() {
-      const res = await fetch(url)
+  const { data: items } = useFetch(url)
 
-      const data = await res.json()
+  // useEffect(() => {
+  //   async function getData() {
+  //     const res = await fetch(url)
 
-      setProducts(data)
-    }
+  //     const data = await res.json()
 
-    getData()
+  //     setProducts(data)
+  //   }
 
-  }, [])
+  //   getData()
+
+  // }, [])
 
   const [name, setName] = useState('')
   const [price, setPrice] = useState('')
@@ -39,12 +43,16 @@ function App() {
     }
 
     const res = await fetch(url, {
-      method: "POST", 
+      method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
       body: JSON.stringify(product),
     })
+
+    const addedProduct = await res.json()
+
+    setProducts((prevProducts) => [...prevProducts, addedProduct])
 
     if (res.ok) {
       setName('');
@@ -58,15 +66,16 @@ function App() {
       <div className="App">
         <h1>HTTP em React</h1>
         <ul>
-          {procucts.map((product) => (
-            <li key={product.id}> {product.name} - R${product.price} </li>
-          ))}
+          {items &&
+            items.map((product) => (
+              <li key={product.id}> {product.name} - R${product.price} </li>
+            ))}
         </ul>
-        <ul className='list-games'>
+        {/* <ul className='list-games'>
           {items.map((game) => (
             <li key={game.id}> {game.name} Valor: R${game.price} </li>
           ))}
-        </ul>
+        </ul> */}
         <div className="add-product">
           <form onSubmit={handlesubmit}>
             <label>

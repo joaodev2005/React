@@ -84,6 +84,26 @@
       "id": "bb6d",
       "name": "item novo",
       "price": "100"
+    },
+    {
+      "id": "25fd",
+      "name": "testando carregamento",
+      "price": "20"
+    },
+    {
+      "id": "412d",
+      "name": "Notebook Dell g15",
+      "price": "1"
+    },
+    {
+      "id": "6128",
+      "name": "tudo",
+      "price": "1"
+    },
+    {
+      "id": "e4ba",
+      "name": "PlayStation 5",
+      "price": "5000"
     }
   ]
 }
