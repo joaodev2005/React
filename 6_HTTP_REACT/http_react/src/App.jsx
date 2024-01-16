@@ -16,7 +16,7 @@ import './App.css'
 function App() {
   const [products, setProducts] = useState([])
 
-  const { data: items, httpConfig, loading } = useFetch(url)
+  const { data: items, httpConfig, loading, error } = useFetch(url)
 
   // useEffect(() => {
   //   async function getData() {
@@ -68,6 +68,7 @@ function App() {
       <div className="App">
         <h1>HTTP em React</h1>
         {loading && <p>Carregando...</p> }
+        {error && <p> {error} </p> }
         <ul>
           {items &&
             items.map((product) => (
