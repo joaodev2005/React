@@ -1,0 +1,255 @@
+{
+    "products": [
+      {
+        "name": "Capa de chuva",
+        "price": "50.50",
+        "id": 5
+      },
+      {
+        "name": "Teclado",
+        "price": "110",
+        "id": 6
+      },
+      {
+        "name": "Cadeira",
+        "price": "200",
+        "id": 7
+      },
+      {
+        "id": "5f2f",
+        "name": "jabi",
+        "price": "2"
+      },
+      {
+        "id": "9e3c",
+        "name": "jabi",
+        "price": "2"
+      },
+      {
+        "id": "1084",
+        "name": "jabi",
+        "price": "2"
+      },
+      {
+        "id": "7b37",
+        "name": "jabi",
+        "price": "2"
+      },
+      {
+        "id": "645f",
+        "name": "jabi",
+        "price": "2"
+      },
+      {
+        "id": "7157",
+        "name": "jabi",
+        "price": "2"
+      },
+      {
+        "id": "ae55",
+        "name": "jabi",
+        "price": "2"
+      },
+      {
+        "id": "c2a6",
+        "name": "jabi",
+        "price": "2"
+      },
+      {
+        "id": "650b",
+        "name": "jabi",
+        "price": "2"
+      },
+      {
+        "id": "3c8a",
+        "name": "jabi",
+        "price": "2"
+      },
+      {
+        "id": "48b8",
+        "name": "foda",
+        "price": "1212"
+      },
+      {
+        "id": "c1d9",
+        "name": "",
+        "price": ""
+      },
+      {
+        "id": "5707",
+        "name": "fogosa",
+        "price": "2,660"
+      },
+      {
+        "id": "bb6d",
+        "name": "item novo",
+        "price": "100"
+      },
+      {
+        "id": "25fd",
+        "name": "testando carregamento",
+        "price": "20"
+      },
+      {
+        "id": "412d",
+        "name": "Notebook Dell g15",
+        "price": "1"
+      },
+      {
+        "id": "6128",
+        "name": "tudo",
+        "price": "1"
+      },
+      {
+        "id": "e4ba",
+        "name": "PlayStation 5",
+        "price": "5000"
+      },
+      {
+        "id": "4bc4",
+        "name": "glock",
+        "price": "240"
+      },
+      {
+        "id": "f450"
+      },
+      {
+        "id": "4089"
+      },
+      {
+        "id": "6ebb"
+      },
+      {
+        "id": "1327"
+      },
+      {
+        "id": "0421"
+      },
+      {
+        "id": "414a"
+      },
+      {
+        "id": "5ceb"
+      },
+      {
+        "id": "433e"
+      },
+      {
+        "id": "b13b"
+      },
+      {
+        "id": "9ca4"
+      },
+      {
+        "id": "6719"
+      },
+      {
+        "id": "3902"
+      },
+      {
+        "id": "9d77",
+        "name": "rexona",
+        "price": "2"
+      },
+      {
+        "id": "106b",
+        "name": "nivea",
+        "price": "10"
+      },
+      {
+        "id": "732e",
+        "name": "nivea",
+        "price": "10"
+      },
+      {
+        "id": "106b",
+        "name": "nivea",
+        "price": "10"
+      },
+      {
+        "id": "6c44",
+        "name": "nivea",
+        "price": "10"
+      },
+      {
+        "id": "9855",
+        "name": "nivea",
+        "price": "10"
+      },
+      {
+        "id": "508f",
+        "name": "nivea",
+        "price": "10"
+      },
+      {
+        "id": "a656",
+        "name": "nivea",
+        "price": "10"
+      },
+      {
+        "id": "be0a",
+        "name": "nivea",
+        "price": "10"
+      },
+      {
+        "id": "56f9",
+        "name": "joao",
+        "price": "23"
+      },
+      {
+        "id": "5a0f",
+        "name": "joao",
+        "price": "23"
+      },
+      {
+        "id": "7896",
+        "name": "joao",
+        "price": "23"
+      },
+      {
+        "id": "ff0f",
+        "name": "joao",
+        "price": "23"
+      },
+      {
+        "id": "479b",
+        "name": "joao",
+        "price": "23"
+      },
+      {
+        "id": "1a79",
+        "name": "joao",
+        "price": "23"
+      },
+      {
+        "id": "62ab",
+        "name": "joao",
+        "price": "23"
+      },
+      {
+        "id": "c2b9",
+        "name": "",
+        "price": ""
+      },
+      {
+        "id": "46dc",
+        "name": "guarana",
+        "price": "21"
+      },
+      {
+        "id": "8248",
+        "name": "guarana",
+        "price": "21"
+      },
+      {
+        "id": "a75f",
+        "name": "teste",
+        "price": "12"
+      },
+      {
+        "id": "4b6a",
+        "name": "teste",
+        "price": "12"
+      }
+    ]
+  }
