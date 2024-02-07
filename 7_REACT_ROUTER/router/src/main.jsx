@@ -15,6 +15,10 @@ import ErrorPage from './routes/ErrorPage.jsx'
 
 import { createBrowserRouter, RouterProvider, Route } from 'react-router-dom'
 
+import Info from './routes/Info.jsx'
+
+import Search from './routes/Search.jsx'
+
 
 const router = createBrowserRouter([
   {
@@ -24,19 +28,27 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home />
+        element: <Home />,
       },
       {
         path: 'Contact',
-        element: <Contact />
+        element: <Contact />,
       },
       {
         path: 'About',
-        element: <About />
+        element: <About />,
       },
       {
-        path: '/products/:id',
+        path: 'products/:id',
         element: <Product />,
+      },
+      {
+        path: 'products/:id/info',
+        element: <Info />,
+      },
+      {
+        path: 'search',
+        element: <Search />,
       }
     ]
   },

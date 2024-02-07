@@ -1,0 +1,9 @@
+.active {
+    background-color: red;
+    color: #000;
+}
+
+.Navbar {
+    display: flex;
+    gap: 10px;
+}

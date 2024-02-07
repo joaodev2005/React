@@ -1,15 +1,15 @@
 import { useFetch } from '../hooks/UseFetch'
 
+const url = 'http://localhost:3000/products'
+
 import { Link } from 'react-router-dom'
 
-const url = 'http://localhost:3000/products'
-const Home = () => {
+const Search = () => {
 
     const { data: items } = useFetch(url)
 
     return (
         <div>
-            <h1>Home</h1>
             <ul className='products'>
                 {items && items.map((item) => (
                     <li key={item.id}>
@@ -23,4 +23,4 @@ const Home = () => {
     )
 }
 
-export default Home
+export default Search
