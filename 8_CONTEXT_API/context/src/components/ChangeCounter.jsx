@@ -10,6 +10,6 @@ const ChangeCounter = () => {
             <button onClick={() => setCounter(counter + 1)}>Increment</button>
         </div>
     )
-}
+} 
 
 export default ChangeCounter
