@@ -14,7 +14,7 @@ const Home = () => {
 
     const { counter } = useCounterContext()
 
-    const { color } = useTitleColorContext()
+    const { color, dispatch } = useTitleColorContext()
 
 
     return (
@@ -22,6 +22,10 @@ const Home = () => {
             <h1 style={{ color: color }}>Home</h1>
             <p>Counter: {counter}</p>
             <ChangeCounter />
+            <div>
+                <button onClick={() => dispatch({ type: 'RED' })}>Red</button>
+                <button onClick={() => dispatch({ type: 'BLUE' })}>Blue</button>
+            </div>
         </>
     )
 }

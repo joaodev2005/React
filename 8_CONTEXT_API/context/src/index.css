@@ -13,3 +13,15 @@
 .Navbar a {
     text-decoration: none;
 }
+
+button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #000;
+    margin: .5rem;
+}
