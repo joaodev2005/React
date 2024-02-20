@@ -1,9 +1,16 @@
-import React from 'react'
+import { useContext } from "react"
+import { CounterContext } from "../context/CounterContext"
 
 const Contact = () => {
-  return (
-    <div>Contact</div>
-  )
+
+    const { counter } = useContext(CounterContext)
+
+    return (
+        <>
+            <div>Contact</div>
+            <p>Counter: {counter}</p>
+        </>
+    )
 }
 
 export default Contact
